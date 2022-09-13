@@ -3,7 +3,7 @@ const app = express();
 const port = 3001;
 
 const visitor_model = require("./visitor_model");
-app.listen(port);
+
 app.use(express.json());
 app.use(function (req, res, next) {
   res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
