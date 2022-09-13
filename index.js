@@ -47,6 +47,6 @@ app.delete("/visitors/:id", (req, res) => {
       res.status(500).send(error);
     });
 });
-app.listen(port, () => {
+app.listen(process.env.PORT || port, () => {
   console.log(`App running on port ${port}.`);
 });
