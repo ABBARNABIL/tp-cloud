@@ -54,7 +54,7 @@ function App() {
     <div>
       {visitors ? visitors : "There is no visitor data available"}
       <br />
-      <button onClick={createVisitor}>Add visitor</button>
+      <button onClick={createVisitor}>Add visitors</button>
       <br />
       <button onClick={deleteVisitor}>Delete visitor</button>
     </div>
