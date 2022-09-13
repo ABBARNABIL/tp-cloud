@@ -1,0 +1,28 @@
+version: "3.9"
+
+services:
+  web:
+    image: react-app-tp1
+    depends_on:
+      - api
+    ports:
+      - "3000:3000"
+
+  api:
+    image: express-api-tp1
+    depends_on:
+      - database
+    ports:
+      - "3001:3001"
+
+  database:
+    image: postgres:14
+    environment:
+      - POSTGRES_PASSWORD=root
+      - POSTGRES_USER=my_user
+      - POSTGRES_DB=postgres
+    volumes:
+      - ./pgdata:/var/lib/postgresql/data
+      - ./sql/create_tables.sql:/docker-entrypoint-initdb.d/create_tables.sql
+    ports:
+      - "5432:5432"
